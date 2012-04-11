@@ -16,6 +16,17 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+
+group :development, :test do
+  gem 'ruby-debug19', :require => 'ruby-debug'
+  gem 'rspec-rails', "~> 2.6"
+end
+
+group :test do
+  gem 'test-unit'
+  gem 'factory_girl_rails'
+end
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
@@ -27,6 +38,3 @@ end
 
 # Deploy with Capistrano
 # gem 'capistrano'
-
-# To use debugger
-# gem 'ruby-debug19', :require => 'ruby-debug'
