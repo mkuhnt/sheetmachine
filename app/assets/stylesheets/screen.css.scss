@@ -1,0 +1,29 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+@import "compass/css3/border-radius";
+
+// Styles used to format the basics of sheetmachine
+// mku, April 2012
+body {
+  background: #BAB2AB; 
+}
+
+// master container of the page
+#page {
+  padding-top: 50px;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", Helvetica, "Trebuchet MS", Verdana, sans-serif;
+
+  // content container
+  #sheet_container {
+    background: #FFF;
+    padding: 20px;
+    width: 1000px;
+    height: 500px;
+    margin: 0 auto 0 auto;
+    @include border-radius(4px, 4px);
+  }
+}
