@@ -5,6 +5,8 @@
 
 @import "compass/reset";
 @import "compass/css3/border-radius";
+@import "compass/css3/box-shadow";
+@import "constants";
 
 // Styles used to format the basics of sheetmachine
 // mku, April 2012
@@ -18,12 +20,11 @@ body {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", Helvetica, "Trebuchet MS", Verdana, sans-serif;
 
   // content container
-  #sheet_container {
-    background: #FFF;
-    padding: 20px;
-    width: 1000px;
-    height: 500px;
+  #page_container {
+    position: relative;
+    top: $sheet_offset_y * -1;
+    left: $sheet_offset_x * -1;
+    width: $container_width;
     margin: 0 auto 0 auto;
-    @include border-radius(4px, 4px);
   }
 }

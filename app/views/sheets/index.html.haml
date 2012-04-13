@@ -1,17 +1,26 @@
-%h1 Listing sheets
-%table
-  %tr
-    %th Title
-    %th Body
-    %th
-    %th
-    %th
-  - @sheets.each do |sheet|
-    %tr
-      %td= sheet.title
-      %td= sheet.body
-      %td= link_to 'Show', sheet
-      %td= link_to 'Edit', edit_sheet_path(sheet)
-      %td= link_to 'Destroy', sheet, confirm: 'Are you sure?', method: :delete
-%br/
-= link_to 'New Sheet', new_sheet_path
+.sheet_container{ id: "cont_1" }
+  .path
+    Way home..
+  .content
+    .headline_container
+      %h1
+        List of sheets
+    .list_container
+      %ul
+        - @sheets.each do |sheet|
+          %li= link_to sheet.title, sheet_path(sheet)
+    .action_container
+      = link_to 'New Sheet', new_sheet_path
+  .sheet_container{ id: "cont_2" }
+    .path
+      Way home..
+    .content
+      .headline_container
+        %h1
+          List of sheets
+      .list_container
+        %ul
+          - @sheets.each do |sheet|
+            %li= link_to sheet.title, sheet_path(sheet)
+      .action_container
+        = link_to 'New Sheet', new_sheet_path

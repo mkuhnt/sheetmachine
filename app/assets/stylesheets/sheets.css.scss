@@ -1,4 +1,42 @@
-// Place all the styles related to the sheets controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "compass/css3/border-radius";
+@import "compass/css3/box-shadow";
+@import "constants";
 
+.sheet_container {
+  position: absolute;
+  top: $sheet_offset_y;
+  left: $sheet_offset_x;
+  height: 1000px;
+  width: $container_width;
+  background: #FFF;
+  @include border-radius(4px, 4px);
+  @include single-box-shadow;
+
+  .path {
+    padding: 5px 0 0 $sheet_offset_x;
+  }
+ 
+  .content {
+    padding: 20px;
+    .headline_container {
+      h1 {
+        font-size: 2em;
+        margin: 0 0 20px 0;
+      }
+    }
+
+    .list_container {
+      margin: 0 0 20px 0;
+    }
+
+    .action_container {
+      a {
+        text-decoration: none;
+        color: #908B87;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

@@ -1,10 +1,11 @@
-%p#notice= notice
-%p
-  %b Title:
-  = @sheet.title
-%p
-  %b Body:
-  = @sheet.body
-= link_to 'Edit', edit_sheet_path(@sheet)
-|
-\#{link_to 'Back', sheets_path}
+.sheet
+  %p#notice= notice
+  %p
+    %b Title:
+    = @sheet.title
+  %p
+    %b Body:
+    = @sheet.body
+  = link_to 'Edit', edit_sheet_path(@sheet)
+  |
+  \#{link_to 'Back', sheets_path}
