@@ -2,10 +2,8 @@
   = @sheet.title
 .content
   .sheet
-    %p#notice= notice
-    %p
-      %b Title:
-      = @sheet.title
+    .headline_container
+      %h1= @sheet.title
     %p
       %b Body:
       = @sheet.body

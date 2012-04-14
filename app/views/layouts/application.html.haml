@@ -16,7 +16,8 @@
   %body
     #page
       #page_container
-        = yield
+        .sheet_container{ id: "root_container" }
+          = yield
 
   != yield :head_elements_at_bottom
   != yield :bottom

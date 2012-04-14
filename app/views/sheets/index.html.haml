@@ -1,15 +1,14 @@
-.sheet_container{ id: "root_container" }
-  .path{ style: "display: none;" }
-    = "Collection of #{@sheets.size} sheets"
-  .content
-    .headline_container
-      %h1
-        List of sheets
-    .list_container
-      %ul
-        - @sheets.each do |sheet|
-          %li= link_to sheet.title, sheet_path(sheet)
-    .action_container
-      = link_to 'New Sheet', new_sheet_path
-  .sheet_container{ id: "start_container", style: "display: none;" }
+.path{ style: "display: none;" }
+  = "Collection of #{@sheets.size} sheets"
+.content
+  .headline_container
+    %h1
+      List of sheets
+  .list_container
+    %ul
+      - @sheets.each do |sheet|
+        %li= link_to sheet.title, sheet_path(sheet)
+  .action_container
+    = link_to 'New Sheet', new_sheet_path
+.sheet_container{ id: "start_container", style: "display: none;" }
 

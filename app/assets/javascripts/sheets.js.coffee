@@ -3,11 +3,18 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 $(document).ready ->
-  $('#root_container a').pjax('#start_container')
-  $('#root_container').live 'pjax:end', (e, xhr, err) ->
-    $('#root_container .path').show()
-    $('#root_container .path').click ->
-      $.pjax( {url: '/sheets', container: '#page_container' } ) 
-    $('#root_container .content').hide()
+  init_container $('#root_container')
+
+  $('#start_container').on 'pjax:end', (e, xhr, err) ->
+    alert('start_container pjax:end')
+    $('#root_container').children('.path').show()
+    $('#root_container').children('.content').hide()
     $('#root_container').children('.sheet_container').show()
     
+
+init_container = (container) ->
+  $('a', container).pjax("#{container.selector} > .sheet_container")
+  url = document.URL
+  $("#{container.selector} > .path").hide().click ->
+    alert(url)
+    $.pjax( {url: url, container: container.selector })
