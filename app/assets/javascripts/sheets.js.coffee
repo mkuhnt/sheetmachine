@@ -2,17 +2,12 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
-hideSheet = ->
-  $("#cont_2").hide()
-  $("#cont_1").children(".path").first().hide()
-  $("#cont_1").children(".content").first().show()
-
-showSheet = ->
-  $("#cont_1").children(".path").first().show()
-  $("#cont_1").children(".content").first().hide()
-  $("#cont_2").children(".path").first().hide()
-  $("#cont_2").show()
-
-@app = window.app ? {}
-@app.hideSheet = hideSheet
-@app.showSheet = showSheet
+$(document).ready ->
+  $('#root_container a').pjax('#start_container')
+  $('#root_container').live 'pjax:end', (e, xhr, err) ->
+    $('#root_container .path').show()
+    $('#root_container .path').click ->
+      $.pjax( {url: '/sheets', container: '#page_container' } ) 
+    $('#root_container .content').hide()
+    $('#root_container').children('.sheet_container').show()
+    
